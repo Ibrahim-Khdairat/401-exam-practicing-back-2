@@ -8,7 +8,7 @@ const axios = require('axios');
 const server = express();
 server.use(express.json());
 server.use(cors());
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 mongoose.connect(`mongodb://ibrahim:0010097790@cluster0-shard-00-00.ekaaj.mongodb.net:27017,cluster0-shard-00-01.ekaaj.mongodb.net:27017,cluster0-shard-00-02.ekaaj.mongodb.net:27017/test?ssl=true&replicaSet=atlas-53s6ul-shard-0&authSource=admin&retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -182,4 +182,4 @@ server.get('/', (request, response) => {
   response.send('All good ...')
 })
 
-server.listen(3001, () => console.log(`listening on ${3001}`));
+server.listen(PORT, () => console.log(`listening on ${PORT}`));
